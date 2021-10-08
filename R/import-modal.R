@@ -136,15 +136,15 @@ import_ui <- function(id, from = c("env", "file", "copypaste", "googlesheets")) 
         value = "import",
         importTab
       ),
-      tabPanel(
-        title = tagList(
-          phosphoricons::ph("table", title = i18n("View")),
-          i18n("View")
-        ),
-        value = "view",
-        tags$br(),
-        DTOutput(outputId = ns("view"))
-      ),
+      # tabPanel(
+      #   title = tagList(
+      #     phosphoricons::ph("table", title = i18n("View")),
+      #     i18n("View")
+      #   ),
+      #   value = "view",
+      #   tags$br(),
+      #   DTOutput(outputId = ns("view"))
+      # ),
       tabPanel(
         title = tagList(
           phosphoricons::ph("gear-six", title = i18n("Update")),
@@ -180,7 +180,7 @@ import_ui <- function(id, from = c("env", "file", "copypaste", "googlesheets")) 
     tags$script(
       sprintf("$('#%s').addClass('nav-justified');", ns("tabs-mode")),
       sprintf("fadeTab({id: '%s'});", ns("tabs-mode")),
-      sprintf("disableTab({id: '%s', value: '%s'});", ns("tabs-mode"), "view"),
+      # sprintf("disableTab({id: '%s', value: '%s'});", ns("tabs-mode"), "view"),
       sprintf("disableTab({id: '%s', value: '%s'});", ns("tabs-mode"), "update"),
       sprintf("disableTab({id: '%s', value: '%s'});", ns("tabs-mode"), "validate")
     )
